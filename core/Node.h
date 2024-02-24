@@ -6,7 +6,7 @@
 
 class Node {
 public:
-    std::string id; // Unique identifier for the nodedd
+    std::string id; // Unique identifier for the node
 
     Node(std::string id) : id(id) {}
 };
