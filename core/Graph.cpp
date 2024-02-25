@@ -2,9 +2,11 @@
 
 Graph::Graph() {
 
-    Node* everything = new Node("1");
+    Node* everything = new Node();
+    everything->id = "1";
     nodes["1"] = everything;
-    Node* nothing = new Node("0");
+    Node* nothing = new Node();
+    nothing->id = "0";
     nodes["0"] = nothing;
 
 }

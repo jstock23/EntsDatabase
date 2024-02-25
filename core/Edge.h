@@ -12,10 +12,12 @@ public:
         Edges connecting two disjoint sets are undirected.
     */
 
-    std::string from;
-    std::string to;
+    // I changed the edge constructor to take Node* objects instead of strings.
+    // Each edge should be created between two Node* objects (Pointers to nodes)
+    Node* from;
+    Node* to;
     
-    Edge(std::string uidFrom, std::string uidTo) : from(uidFrom), to(uidTo) {}
+    Edge(Node* uidFrom, Node* uidTo) : from(uidFrom), to(uidTo) {}
       
 };
 
