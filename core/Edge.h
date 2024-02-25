@@ -1,6 +1,9 @@
 #ifndef EDGE_H
 #define EDGE_H
 
+#include <string>
+
+
 class Edge {
 public:
 
@@ -9,11 +12,11 @@ public:
         Edges connecting two disjoint sets are undirected.
     */
 
-    String from;
-    String to;
+    std::string from;
+    std::string to;
     
-    Edge(String uidFrom, String uidTo) : from(uidFrom), to(uidTo) {}
-    
+    Edge(std::string uidFrom, std::string uidTo) : from(uidFrom), to(uidTo) {}
+      
 };
 
 #endif // EDGE_H
