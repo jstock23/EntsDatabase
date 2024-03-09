@@ -1,6 +1,9 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include <node.h>
+#include <edge.h>
+#include <string>
 #include <vector>
 #include <map>
 

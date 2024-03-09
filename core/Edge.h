@@ -1,6 +1,9 @@
 #ifndef EDGE_H
 #define EDGE_H
 
+#include <string>
+#include "Node.h"
+
 class Edge {
 public:
 
@@ -9,11 +12,13 @@ public:
         Edges connecting two disjoint sets are undirected.
     */
 
-    String from;
-    String to;
+    // I changed the edge constructor to take Node* objects instead of strings.
+    // Each edge should be created between two Node* objects (Pointers to nodes)
+    Node* from;
+    Node* to;
     
-    Edge(String uidFrom, String uidTo) : from(uidFrom), to(uidTo) {}
-    
+    Edge(Node* uidFrom, Node* uidTo) : from(uidFrom), to(uidTo) {}
+      
 };
 
 #endif // EDGE_H
