@@ -2,7 +2,7 @@
 #define EDGE_H
 
 #include <string>
-
+#include "Node.h"
 
 class Edge {
 public:

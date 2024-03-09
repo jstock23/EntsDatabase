@@ -3,7 +3,7 @@
 
 #include <string>
 #include <set>
-#include <graph.h>
+#include "Graph.h"
 
 class Node {
 public:
@@ -18,7 +18,6 @@ public:
    
     // Each node should have a set of pointers to nodes allowing sets to be respresented as nodes in the structure
     // Each node should have pointers to its imediate uptree neighbors and its immediate downtree neighbors
-
     std::set<Node*> superset;
     std::set<Node*> subset;
     
@@ -26,7 +25,8 @@ public:
     // The definition should follow the graph datastructure of the linguistic meaning
     Graph* definition;
 
-    Node(std::string id, Node** superset, Node** subset, Graph definition) : id(id) {}
+    Node(std::string id, std::set<Node*> superset, std::set<Node*> subset, Graph* definition) : 
+    id(id), superset(superset), subset(subset), definition(definition){}
 
     // The contstructure should use existing edges to build this out or new edges provided as input to a function
 
