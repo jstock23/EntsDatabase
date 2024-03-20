@@ -1,4 +1,5 @@
 #include "Graph.h"
+#include "InfoBit.h"
 
 Graph::Graph() {
 
@@ -16,6 +17,7 @@ Graph::~Graph() {
 }
 
 // Add Node Function
+
 void Graph::addNode(Node* node) {
     nodes[node->id] = node;
 }
@@ -23,4 +25,10 @@ void Graph::addNode(Node* node) {
 //Add Edge Function
 void Graph::addEdge(Edge* edge) {
     edges.push_back(edge);
+}
+
+// Add Info Function
+void Graph::addInfo(InfoBit InfoBit) {
+    std::lock_guard<std::shared_mutex> lock(infoQueueMutex);
+    infoQueue.push(InfoBit);
 }

@@ -27,15 +27,15 @@ const std::string& Node::getName() const {
     return name;
 }
 
-const std::set<Node*>& Node::getSuperset() const {
+const std::unordered_set<Node*>& Node::getSuperset() const {
     return superset;
 }
 
-const std::set<Node*>& Node::getSubset() const {
+const std::unordered_set<Node*>& Node::getSubset() const {
     return subset;
 }
 
-const std::set<Node*>& Node::getDisjoint() const {
+const std::unordered_set<Node*>& Node::getDisjoint() const {
     return disjoint;
 }
 

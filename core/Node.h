@@ -13,13 +13,13 @@ private:
     std::string id;
 
     // Each node should have a set of pointers to nodes allowing sets to be respresented as nodes in the structure
-    // Each node should have pointers to its imediate uptree neighbors and its immediate downtree neighbors
-    std::set<Node*> superset;
-    std::set<Node*> subset;
-    std::set<Node*> disjoint;
+    // Each node should have pointers to its imediate neighbors in the reduced graph.
+    std::unordered_set<Node*> superset;
+    std::unordered_set<Node*> subset;
+    std::unordered_set<Node*> disjoint;
+
 
 public:
-    //***** CLASS FUNCTIONS *****//
 
     Node(const std::string& id = "", const std::string& name = "",);
     ~Node();
@@ -31,9 +31,9 @@ public:
     // Getters
     const std::string& getId() const;
     const std::string& getName() const;
-    const std::set<Node*>& getSuperset() const;
-    const std::set<Node*>& getSubset() const;
-    const std::set<Node*>& getDisjoint() const;
+    const std::unordered_set<Node*>& getSuperset() const;
+    const std::unordered_set<Node*>& getSubset() const;
+    const std::unordered_set<Node*>& getDisjoint() const;
 
     /*
         Need to decide how to handle edge creation and destruction.
