@@ -35,6 +35,10 @@ const std::set<Node*>& Node::getSubset() const {
     return subset;
 }
 
+const std::set<Node*>& Node::getDisjoint() const {
+    return disjoint;
+}
+
 // Relationship Management
 void Node::addSupersetNode(Node* node) {
     superset.insert(node);
@@ -50,4 +54,12 @@ void Node::addSubsetNode(Node* node) {
 
 void Node::removeSubsetNode(Node* node) {
     subset.erase(node);
+}
+
+void Node::addDisjointNode(Node* node) {
+    disjoint.insert(node);
+}
+
+void Node::removeDisjointNode(Node* node) {
+    disjoint.erase(node);
 }
