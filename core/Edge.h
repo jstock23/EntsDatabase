@@ -4,6 +4,9 @@
 #include <string>
 #include "Node.h"
 
+/**
+    Might delete this class... still don't know.
+*/
 class Edge {
 private:
     /*
