@@ -24,20 +24,11 @@ class Graph {
 
 public:
 
+    Graph();
 
-
-    Graph() {
-        infoProcessingThread = std::thread(&Graph::processInfoQueue, this);
-    }
-
-    ~Graph() {
-        if (infoProcessingThread.joinable()) {
-            infoProcessingThread.join();
-        }
-    }
+    ~Graph();
 
     void addInfo(InfoBit info);
-
 
     /*
         New nodes are added to the graph as subsets of an existing graph or Everything by default.
@@ -48,35 +39,8 @@ public:
     void removeNode(std::string nodeId);
     void removeEdge(Edge* edge);
 
-
-    void processInfoQueue() {
-        while (true) {
-            std::unique_lock<std::mutex> lock(infoQueueMutex);
-            if (!infoToAdd.empty()) {
-                InfoBit info = infoToAdd.front();
-                infoToAdd.pop();
-                lock.unlock();
-
-                process(info);
-
-            } else {
-                lock.unlock();
-                std::this_thread::sleep_for(std::chrono::milliseconds(100));
-            }
-        }
-    }
-
-    void process(InfoBit info) {
-        std::unique_lock<std::mutex> lock(infoProcessingMutex);
-        
-        //First we test the info against the existing graph.
-
-        //If won't create a conflict, then we alter the graph.
-
-        //Lasly we cleanup redundant edges.
-
-
-    }
+    void processInfoQueue();
+    void process(InfoBit info);
 };
 
 #endif // GRAPH_H
