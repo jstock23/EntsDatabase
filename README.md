@@ -1,16 +1,16 @@
 # EntsDatabase
-Abstract smart database server for information storage and analysis
+Abstract database server for information storage, retrieval and analysis. Client interfaces display output and handle user input.
 
-C++ server that maintains an abstract knowledge database that can be modified and analyzed using a command protocol.
+C++ server maintains a knowledge graph that can be modified and analyzed using a command protocol.
 
-Not executable yet.
-Work in progress.
-May expose the C++ class as a library if useful, but that might be too unwieldy.
+Work in progress. Use at own risk
 
-Stores abstract information by limiting acceptable information to objects and their properties, as well as sets of objects.
+The C++ type will be available as an API to use directly.
+
+Bits of information include set UIDs and edge type in the graph. Information is stored in a reduced graph that more efficiently stores data but must be analyzed.
+
+All nodes in this graph system represent either objects, sets, properties or atomic object predicates, as well as sets of objects.
 These limitations allow for an infinite dimensional object space that can be modeled as a complex directed acyclic graph/tree.
-Information is stored in the graph as nodes that represent unordered sets of objects. Graphs have two types of edges: a directed edge for set membership, and an undirected edge for set exclusion.
-
 Each set-node has a unique ID for easy lookup and portability. This allows information to be encoded as a language-agnostic graph and easily serialized.
 
 Graph files will contain language-agnostic information about the properties of objects, while separate language files will store how to represent the sets and objects in that particular language.
